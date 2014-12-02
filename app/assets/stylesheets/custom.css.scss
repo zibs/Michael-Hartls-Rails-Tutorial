@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
+$input-border-focus: yellow;
 @import "bootstrap";
+
 
 /* universal */
 
@@ -9,6 +11,7 @@ $gray-medium-light: #eaeaea;
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+
 }
 
 html {
@@ -25,6 +28,8 @@ section {
 
 textarea {
   resize: vertical;
+
+  
 }
 
 .center {
