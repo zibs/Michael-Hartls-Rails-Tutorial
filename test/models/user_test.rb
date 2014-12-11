@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
 
 
   def setup
-   @user = User.new(name: "Exa", email: "user@example.com",
+   @user = User.new(name: "Example User", email: "user@example.com",
    					password: "foobar", password_confirmation: "foobar"	)
   end
 
@@ -71,6 +71,11 @@ test "email validation should accept valid addresses" do
   	@user.save	
   	assert_not duplicate_user.valid?
   end
+
+ test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
+  
 
 end
 

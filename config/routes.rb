@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
 
-  root               'static_pages#home'
-  get 'help'    =>   'static_pages#help'
-  get 'about'   =>   'static_pages#about'
-  get 'contact' =>   'static_pages#contact'
-  get 'signup'  =>   'users#new'
+  get 'sessions/new'
+     # pagename doesn't matter so long as consistent with linkname, but action === filename
+  root                 'static_pages#home'
+  get 'help'      =>   'static_pages#help'
+  get 'about'     =>   'static_pages#about'
+  get 'contact'   =>   'static_pages#contact'
+  get 'signup'    =>   'users#new'
+  get 'login'     =>   'sessions#new'
+  post 'login'    =>   'sessions#create'
+  delete 'logout' =>   'sessions#destroy'
+
 
 # CRUD/HTTP features
   resources :users
 
+
+
+  # 
+
+ # get 'pagename' (doesn't matter so long as consistent with linkname ) => controller#action (corresponds to action in controller
 
 
 
