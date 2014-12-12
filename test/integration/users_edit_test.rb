@@ -48,6 +48,7 @@ test "successful edit with friendly forwarding" do
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload
+    assert session[:forwarding_url].blank?
     assert_equal @user.name,  name
     assert_equal @user.email, email
   end
