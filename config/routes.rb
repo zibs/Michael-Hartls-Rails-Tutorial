@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
 # CRUD/HTTP features
   resources :users
+  resources :account_activations, only: [:edit]
+  
 
 
 
