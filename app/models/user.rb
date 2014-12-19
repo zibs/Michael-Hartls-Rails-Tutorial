@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :microposts, dependent: :destroy
   # allows writing to db!
 	attr_accessor :remember_token, :activation_token, :reset_token 
   before_save :downcase_email
@@ -60,6 +61,11 @@ class User < ActiveRecord::Base
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
+
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+  
 
   def password_reset_expired?
   reset_sent_at < 2.hours.ago

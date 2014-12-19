@@ -10,10 +10,17 @@ gem 'turbolinks',           '2.3.0'
 gem 'jbuilder',             '2.2.3'
 gem 'rails-html-sanitizer', '1.0.1'
 gem 'sdoc',                 '0.4.0', group: :doc
+# has_secure_password/digest methods
 gem 'bcrypt',               '3.1.7'
+# Faker for Lorem and Input
 gem 'faker',                '1.4.2'
+# Bootstrap/Paginate for pages on single page
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+# IMG upload gems
+gem 'carrierwave',             '0.10.0'
+gem 'mini_magick',             '3.8.0'
+gem 'fog',                     '1.23.0'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
